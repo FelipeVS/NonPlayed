@@ -1,0 +1,25 @@
+<ion-view view-title="My Games" class="my-view">
+  <ion-content>
+
+    <div>
+      <button class="button button-block button-float" ng-click="findGame()" style="height:100px">
+        What shoud i play now?
+      </button>
+    </div>
+
+
+
+    <ion-list type="list-inset">
+
+      <ion-item class="item-divider"></ion-item>
+
+      <ion-item class="item-thumbnail-left" ng-repeat="game in games" ui-sref="app.gameDetails({ gameTitle: game.title })" ng-click="gameSelected(game)">
+
+        <img ng-src="{{game.photoUrl}}">
+        <h2 class="highlighted_text">{{game.title}}</h2>
+        <p class="regular_text" ng-repeat="tag in game.tags">{{tag}}</p>
+
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

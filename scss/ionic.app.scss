@@ -1,0 +1,96 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// My custom color. I’ll override the default for $positive.
+// Note that it’s before we load the rest of Ionic.
+// This is important!
+$energized:                       #F74510 !default;
+$global_bg_color :                #171A21  !default;
+
+$steam_lightblue:                 #67C1F5 !default;
+$steam_darkblue:                  #212D3D !default;
+$steam_midgray:                   #9099A1 !default;
+
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+* {
+  font-family: tahoma;
+}
+
+.my-view {
+  ion-content {
+    background-color: $global_bg_color;
+    color: #fff;
+  }
+  ion-list {
+    background: $global_bg_color;
+    color: $steam_lightblue;
+    .item-content {
+      background: $steam_darkblue;
+    }
+  }
+
+  ion-item {
+    background: $global_bg_color;
+    border: solid 1px $steam_midgray;
+    p {
+      color: $steam_lightblue;
+    }
+  }
+}
+
+.regular_text {
+  color: $steam_midgray !important;
+}
+.highlighted_text {
+  color: $steam_lightblue !important;
+}
+
+
+.button-float{
+  background: $global_bg_color !important;
+  color: $steam_lightblue !important;
+  z-index: 12 !important;
+  margin:0 auto;
+  border-radius: 25px !important;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26) !important;
+  -webkit-transform: translate3d(0, 0, 0) !important;
+  transform: translate3d(0, 0, 0) !important;
+  -webkit-transition: 0.2s linear !important;
+  transition: 0.2s linear !important;
+  -webkit-transition-property: -webkit-transform, all !important;
+  transition-property: transform, all !important;
+  border-color: initial;
+}
+
+.button-float:active{
+  -webkit-transform: translate3d(0, 3px, 0)  !important;
+  transform: translate3d(0, 3px, 0) !important;
+  box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.4) !important;
+  background: darken($energized, 10%) !important;
+  color: white !important;
+}
+
+.toast-Steam {
+    background-image: url(...) !important;
+    background-color: $global_bg_color;
+}
